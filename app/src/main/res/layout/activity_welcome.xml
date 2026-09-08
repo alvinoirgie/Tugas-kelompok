@@ -1,30 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="30dp">
+    android:padding="28dp"
+    android:background="#FFF8F0">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WELCOME!"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="15dp" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="30dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selamat datang di Menu Makanan"
-        android:textSize="18sp"
-        android:layout_marginBottom="30dp" />
+        <!-- ICON MAKANAN -->
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="🍴"
+            android:textSize="52sp"
+            android:background="#FFF0D9"
+            android:layout_marginBottom="22dp" />
 
-    <Button
-        android:id="@+id/btnMulai"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MULAI" />
+        <!-- WELCOME -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WELCOME!"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:textColor="#2D2D2D"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="8dp" />
+
+        <!-- NAMA RESTORAN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Mas Bambang"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#E85D04"
+            android:gravity="center"
+            android:layout_marginBottom="10dp" />
+
+        <!-- DESKRIPSI -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selamat datang! Temukan berbagai makanan favorit dan menu spesial kami."
+            android:textSize="15sp"
+            android:textColor="#777777"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="28dp" />
+
+        <!-- TOMBOL MULAI -->
+        <Button
+            android:id="@+id/btnMulai"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="MULAI PESAN"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E85D04"
+            android:elevation="4dp" />
+
+        <!-- MENU -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🍔   🍗   🍜   🍕"
+            android:textSize="22sp"
+            android:layout_marginTop="25dp" />
+
+    </LinearLayout>
 
 </LinearLayout>
+
