@@ -29,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans"
-                    android:text="TAGABAJO KITCHEN"
+                    android:text="@string/Aplikasi"
                     android:textColor="#2D2D2D"
                     android:textSize="26sp"
                     android:textStyle="bold" />
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="14dp"
-            android:text="Menu Hari Ini"
+            android:text="Menu"
             android:textColor="#2D2D2D"
             android:textSize="22sp"
             android:textStyle="bold" />
