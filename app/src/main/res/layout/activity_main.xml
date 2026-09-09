@@ -29,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans"
-                    android:text="Restaurant Mas Gatot"
+                    android:text="TAGABAJO KITCHEN"
                     android:textColor="#2D2D2D"
                     android:textSize="26sp"
                     android:textStyle="bold" />
