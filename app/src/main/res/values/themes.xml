@@ -1,11 +1,9 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-    <style name="Base.Theme.TugasKelompok"
-        parent="Theme.AppCompat.Light.NoActionBar">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TugasKelompok" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Menggunakan warna bawaan sistem -->
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_dark</item>
+        <item name="colorAccent">@android:color/holo_blue_light</item>
     </style>
-
-    <style name="Theme.TugasKelompok"
-        parent="Base.Theme.TugasKelompok">
-    </style>
-
 </resources>
