@@ -1,58 +1,248 @@
 package com.example.tugaskelompok;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Tombol PESAN
     Button btnBurger, btnAyam, btnMie, btnPizza;
-    ImageButton btnKeranjang; // Deklarasi di LUAR onCreate
+
+    // Tombol KURANG (-)
+    Button btnKurangBurger, btnKurangAyam, btnKurangMie, btnKurangPizza;
+
+    // TextView jumlah
+    TextView tvJumlahBurger, tvJumlahAyam, tvJumlahMie, tvJumlahPizza;
+
+    // Tombol keranjang
+    ImageButton btnKeranjang;
+
+    // Jumlah masing-masing makanan
+    int jumlahBurger = 0;
+    int jumlahAyam = 0;
+    int jumlahMie = 0;
+    int jumlahPizza = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inisialisasi ID Tombol
+
+        // ==========================================
+        // INISIALISASI TOMBOL PESAN
+        // ==========================================
+
         btnBurger = findViewById(R.id.btnBurger);
         btnAyam = findViewById(R.id.btnAyam);
         btnMie = findViewById(R.id.btnMie);
         btnPizza = findViewById(R.id.btnPizza);
-        btnKeranjang = findViewById(R.id.btnKeranjang); // Inisialisasi di DALAM onCreate
 
-        // 1. Tombol Burger
+
+        // ==========================================
+        // INISIALISASI TOMBOL KURANG
+        // ==========================================
+
+        btnKurangBurger = findViewById(R.id.btnKurangBurger);
+        btnKurangAyam = findViewById(R.id.btnKurangAyam);
+        btnKurangMie = findViewById(R.id.btnKurangMie);
+        btnKurangPizza = findViewById(R.id.btnKurangPizza);
+
+
+        // ==========================================
+        // INISIALISASI JUMLAH
+        // ==========================================
+
+        tvJumlahBurger = findViewById(R.id.tvJumlahBurger);
+        tvJumlahAyam = findViewById(R.id.tvJumlahAyam);
+        tvJumlahMie = findViewById(R.id.tvJumlahMie);
+        tvJumlahPizza = findViewById(R.id.tvJumlahPizza);
+
+
+        // ==========================================
+        // INISIALISASI KERANJANG
+        // ==========================================
+
+        btnKeranjang = findViewById(R.id.btnKeranjang);
+
+
+        // ==========================================
+        // BURGER - TAMBAH
+        // ==========================================
+
         btnBurger.setOnClickListener(v -> {
-            CartManager.tambahKeKeranjang(new Makanan("Burger Spesial", 25000));
-            Toast.makeText(this, "Burger Spesial dimasukkan ke keranjang!", Toast.LENGTH_SHORT).show();
+
+            jumlahBurger++;
+
+            tvJumlahBurger.setText(String.valueOf(jumlahBurger));
+
+            CartManager.tambahKeKeranjang(
+                    new Makanan("Burger Spesial", 25000)
+            );
+
+            Toast.makeText(
+                    this,
+                    "Burger Spesial +1",
+                    Toast.LENGTH_SHORT
+            ).show();
         });
 
-        // 2. Tombol Ayam
+
+        // ==========================================
+        // BURGER - KURANG
+        // ==========================================
+
+        btnKurangBurger.setOnClickListener(v -> {
+
+            if (jumlahBurger > 0) {
+
+                jumlahBurger--;
+
+                tvJumlahBurger.setText(String.valueOf(jumlahBurger));
+
+                CartManager.hapusSatuMakanan("Burger Spesial");
+            }
+        });
+
+
+        // ==========================================
+        // AYAM - TAMBAH
+        // ==========================================
+
         btnAyam.setOnClickListener(v -> {
-            CartManager.tambahKeKeranjang(new Makanan("Ayam Geprek", 18000));
-            Toast.makeText(this, "Ayam Geprek dimasukkan ke keranjang!", Toast.LENGTH_SHORT).show();
+
+            jumlahAyam++;
+
+            tvJumlahAyam.setText(String.valueOf(jumlahAyam));
+
+            CartManager.tambahKeKeranjang(
+                    new Makanan("Ayam Geprek", 18000)
+            );
+
+            Toast.makeText(
+                    this,
+                    "Ayam Geprek +1",
+                    Toast.LENGTH_SHORT
+            ).show();
         });
 
-        // 3. Tombol Mie
+
+        // ==========================================
+        // AYAM - KURANG
+        // ==========================================
+
+        btnKurangAyam.setOnClickListener(v -> {
+
+            if (jumlahAyam > 0) {
+
+                jumlahAyam--;
+
+                tvJumlahAyam.setText(String.valueOf(jumlahAyam));
+
+                CartManager.hapusSatuMakanan("Ayam Geprek");
+            }
+        });
+
+
+        // ==========================================
+        // MIE - TAMBAH
+        // ==========================================
+
         btnMie.setOnClickListener(v -> {
-            CartManager.tambahKeKeranjang(new Makanan("Mie Goreng", 15000));
-            Toast.makeText(this, "Mie Goreng dimasukkan ke keranjang!", Toast.LENGTH_SHORT).show();
+
+            jumlahMie++;
+
+            tvJumlahMie.setText(String.valueOf(jumlahMie));
+
+            CartManager.tambahKeKeranjang(
+                    new Makanan("Mie Goreng", 15000)
+            );
+
+            Toast.makeText(
+                    this,
+                    "Mie Goreng +1",
+                    Toast.LENGTH_SHORT
+            ).show();
         });
 
-        // 4. Tombol Pizza
+
+        // ==========================================
+        // MIE - KURANG
+        // ==========================================
+
+        btnKurangMie.setOnClickListener(v -> {
+
+            if (jumlahMie > 0) {
+
+                jumlahMie--;
+
+                tvJumlahMie.setText(String.valueOf(jumlahMie));
+
+                CartManager.hapusSatuMakanan("Mie Goreng");
+            }
+        });
+
+
+        // ==========================================
+        // PIZZA - TAMBAH
+        // ==========================================
+
         btnPizza.setOnClickListener(v -> {
-            CartManager.tambahKeKeranjang(new Makanan("Pizza Medium", 45000));
-            Toast.makeText(this, "Pizza Medium dimasukkan ke keranjang!", Toast.LENGTH_SHORT).show();
+
+            jumlahPizza++;
+
+            tvJumlahPizza.setText(String.valueOf(jumlahPizza));
+
+            CartManager.tambahKeKeranjang(
+                    new Makanan("Pizza Medium", 45000)
+            );
+
+            Toast.makeText(
+                    this,
+                    "Pizza Medium +1",
+                    Toast.LENGTH_SHORT
+            ).show();
         });
 
-        // 5. Tombol Keranjang (Pindah ke CartActivity)
+
+        // ==========================================
+        // PIZZA - KURANG
+        // ==========================================
+
+        btnKurangPizza.setOnClickListener(v -> {
+
+            if (jumlahPizza > 0) {
+
+                jumlahPizza--;
+
+                tvJumlahPizza.setText(String.valueOf(jumlahPizza));
+
+                CartManager.hapusSatuMakanan("Pizza Medium");
+            }
+        });
+
+
+        // ==========================================
+        // BUKA KERANJANG
+        // ==========================================
+
         btnKeranjang.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CartActivity.class);
+
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    CartActivity.class
+            );
+
             startActivity(intent);
         });
+
     }
 }
+

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF8F0"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,72 +16,72 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- HEADER BERISI JUDUL DAN BUTTON KERANJANG -->
+        <!-- ================= HEADER ================= -->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_toStartOf="@id/btnKeranjang"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans"
                     android:text="@string/Aplikasi"
                     android:textColor="#2D2D2D"
-                    android:textSize="26sp"
+                    android:textSize="28sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="16dp"
+                    android:layout_marginTop="4dp"
                     android:text="Temukan makanan favoritmu 🍴"
                     android:textColor="#777777"
                     android:textSize="14sp" />
+
             </LinearLayout>
 
-            <!-- BUTTON KERANJANG DI POJOK KANAN ATAS -->
             <ImageButton
                 android:id="@+id/btnKeranjang"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Keranjang Belanja"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_cart"                />
+                android:backgroundTint="#FFF0D9"
+                android:contentDescription="Keranjang"
+                android:padding="12dp"
+                android:src="@drawable/ic_cart" />
 
         </RelativeLayout>
 
-        <!-- CATEGORY -->
+
+        <!-- ================= JUDUL MENU ================= -->
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="14dp"
-            android:text="Menu"
+            android:layout_marginBottom="15dp"
+            android:text="Menu 🍽️"
             android:textColor="#2D2D2D"
-            android:textSize="22sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
-        <!-- BURGER CARD -->
+
+        <!-- ================= BURGER ================= -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="15dp"
             android:background="#FFFFFF"
             android:elevation="4dp"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="85dp"
@@ -85,244 +89,383 @@
                 android:background="#FFF0D9"
                 android:gravity="center"
                 android:text="🍔"
-                android:textSize="48sp" />
+                android:textSize="42sp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingStart="15dp">
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Burger Spesial"
-                    android:textColor="#292929"
+                    android:textColor="#2D2D2D"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="4dp"
+                    android:layout_marginTop="4dp"
                     android:text="Beef, cheese &amp; fresh vegetables"
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="7dp"
+                    android:layout_marginTop="5dp"
                     android:text="Rp25.000"
                     android:textColor="#E85D04"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnBurger"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#E85D04"
-                    android:text="PESAN"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnKurangBurger"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#EEEEEE"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="-"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvJumlahBurger"
+                        android:layout_width="40dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#2D2D2D"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnBurger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#E85D04"
+                        android:minWidth="0dp"
+                        android:text="PESAN"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- AYAM GEPREK CARD -->
+
+        <!-- ================= AYAM GEPREK ================= -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="15dp"
             android:background="#FFFFFF"
             android:elevation="4dp"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="85dp"
                 android:layout_height="85dp"
-                android:background="#FFE4E1"
+                android:background="#FFF0D9"
                 android:gravity="center"
                 android:text="🍗"
-                android:textSize="48sp" />
+                android:textSize="42sp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingStart="15dp">
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ayam Geprek"
-                    android:textColor="#292929"
+                    android:textColor="#2D2D2D"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="4dp"
+                    android:layout_marginTop="4dp"
                     android:text="Crispy chicken &amp; spicy sambal"
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="7dp"
+                    android:layout_marginTop="5dp"
                     android:text="Rp18.000"
                     android:textColor="#E85D04"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnAyam"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#E85D04"
-                    android:text="PESAN"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnKurangAyam"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#EEEEEE"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="-"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvJumlahAyam"
+                        android:layout_width="40dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#2D2D2D"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnAyam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#E85D04"
+                        android:minWidth="0dp"
+                        android:text="PESAN"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- MIE CARD -->
+
+        <!-- ================= MIE GORENG ================= -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="15dp"
             android:background="#FFFFFF"
             android:elevation="4dp"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="85dp"
                 android:layout_height="85dp"
-                android:background="#FFF3CD"
+                android:background="#FFF0D9"
                 android:gravity="center"
                 android:text="🍜"
-                android:textSize="48sp" />
+                android:textSize="42sp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingStart="15dp">
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mie Goreng"
-                    android:textColor="#292929"
+                    android:textColor="#2D2D2D"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="4dp"
+                    android:layout_marginTop="4dp"
                     android:text="Noodles, egg &amp; fresh vegetables"
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="7dp"
+                    android:layout_marginTop="5dp"
                     android:text="Rp15.000"
                     android:textColor="#E85D04"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnMie"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#E85D04"
-                    android:text="PESAN"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnKurangMie"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#EEEEEE"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="-"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvJumlahMie"
+                        android:layout_width="40dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#2D2D2D"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnMie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#E85D04"
+                        android:minWidth="0dp"
+                        android:text="PESAN"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- PIZZA CARD -->
+
+        <!-- ================= PIZZA ================= -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="15dp"
             android:background="#FFFFFF"
             android:elevation="4dp"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="85dp"
                 android:layout_height="85dp"
-                android:background="#E8F5E9"
+                android:background="#FFF0D9"
                 android:gravity="center"
                 android:text="🍕"
-                android:textSize="48sp" />
+                android:textSize="42sp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingStart="15dp">
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pizza Special"
-                    android:textColor="#292929"
+                    android:textColor="#2D2D2D"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="4dp"
+                    android:layout_marginTop="4dp"
                     android:text="Cheese, pepperoni &amp; special sauce"
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="7dp"
-                    android:text="Rp35.000"
+                    android:layout_marginTop="5dp"
+                    android:text="Rp45.000"
                     android:textColor="#E85D04"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnPizza"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#E85D04"
-                    android:text="PESAN"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnKurangPizza"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#EEEEEE"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="-"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvJumlahPizza"
+                        android:layout_width="40dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#2D2D2D"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnPizza"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:backgroundTint="#E85D04"
+                        android:minWidth="0dp"
+                        android:text="PESAN"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -331,3 +474,4 @@
     </LinearLayout>
 
 </ScrollView>
+
